@@ -1,3 +1,7 @@
+pub fn hello() -> String {
+    format!("Hello Kurt")
+}
+
 #[cfg(test)]
 mod tests {
     #[test]
