@@ -2,6 +2,8 @@
 name = "simple2fa"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description="Simple2FA is a library to easily add two-factor authentication to your app."
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]

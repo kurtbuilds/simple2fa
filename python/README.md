@@ -1,6 +1,6 @@
 # Simple2FA
 
-simple2fa is a library to easily add two-factor authentication to your app.
+Simple2FA is a library to easily add two-factor authentication to your app.
 
 This code is meant to be a full description of how to use simple2fa.
 
