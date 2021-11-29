@@ -28,7 +28,7 @@ fn main() {
     if simple2fa.check_2fa_code(user.otp_secret, "<otp_code>") {
         // 2FA is setup!
     } else {
-        // Something went wrong setting up 2FA. The user might be using a faulty authenticator app.
+        // Something went wrong setting up 2FA. Have the user submit a code again.
     }
 
     // When the user logs in, validate their password, then respond with 
