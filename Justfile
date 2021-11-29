@@ -24,8 +24,8 @@ install:
 bootstrap:
     cargo install cargo-bump
 
-test:
-    cargo test
+test *args:
+    cargo test {{args}}
 alias t := test
 
 check:

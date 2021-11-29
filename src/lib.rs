@@ -4,7 +4,7 @@ use rand::Rng;
 use base32;
 use base32::Alphabet;
 use qrcode::QrCode;
-use image::Luma;
+use image::{DynamicImage, Luma};
 use base64;
 
 static DEFAULT_DIGITS: u32 = 6;
@@ -20,17 +20,20 @@ pub fn generate_2fa_secret() -> String {
 pub fn create_urlencoded_qrcode(service_name: &str, user_name: &str, secret: &str) -> String {
     let url = format!("otpauth://totp/{}:{}?secret={}&issuer={}", service_name, user_name, secret, service_name);
     let code = QrCode::new(url.as_bytes()).unwrap();
-    let image = code.render::<Luma<u8>>().build();
-    format!("data:image/png;base64,{}", base64::encode_config(&image.to_vec(), base64::URL_SAFE))
+    let image = DynamicImage::ImageLuma8(code.render::<Luma<u8>>().build());
+    let mut bytes: Vec<u8> = Vec::new();
+    image.write_to(&mut bytes, image::ImageOutputFormat::Png).unwrap();
+    format!("data:image/png;base64,{}", base64::encode_config(&bytes, base64::URL_SAFE))
 }
 
 
 pub fn create_png_qrcode(service_name: &str, user_name: &str, secret: &str) -> Vec<u8> {
     let url = format!("otpauth://totp/{}:{}?secret={}&issuer={}", service_name, user_name, secret, service_name);
     let code = QrCode::new(url.as_bytes()).unwrap();
-    code.render::<Luma<u8>>()
-        .build()
-        .to_vec()
+    let image = DynamicImage::ImageLuma8(code.render::<Luma<u8>>().build());
+    let mut bytes: Vec<u8> = Vec::new();
+    image.write_to(&mut bytes, image::ImageOutputFormat::Png).unwrap();
+    bytes
 }
 
 
@@ -61,6 +64,15 @@ mod tests {
         let secret2 = generate_2fa_secret();
         assert_eq!(secret.len(), 32);
         assert_ne!(secret, secret2);
+    }
+
+    #[test]
+    fn test_urlencoded_qrcode() {
+        let secret = generate_2fa_secret();
+        let url = create_urlencoded_qrcode("My app", "Marie Curie", &secret);
+        assert!(url.starts_with("data:image/png;base64,"), "URL did not start correctly: {}", url);
+        let len = url.len();
+        assert!(4000 < len && len < 6000, "URL length is not in the correct range: {}", len);
     }
 
     #[test]
