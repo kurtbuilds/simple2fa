@@ -58,13 +58,13 @@ if __name__ == '__main__':
 Simple2FA is also available in other languages:
 
 <p align="center">
-<a href="/kurtbuilds/simple2fa/tree/master/node">
+<a href="/node">
     <img src="https://github.com/kurtbuilds/logos/blob/9e56858d368da9e05a517c81ce28394f82d6b2fa/programming/node.png?raw=true" width="96px"/>
 </a>
-<a href="/kurtbuilds/simple2fa/tree/master/python">
+<a href="/python">
     <img src="https://github.com/kurtbuilds/logos/blob/9e56858d368da9e05a517c81ce28394f82d6b2fa/programming/python.png?raw=true" width="96px"/>
 </a>
-<a href="kurtbuilds/simple2fa/tree/master">
+<a href="/">
     <img src="https://github.com/kurtbuilds/logos/blob/9e56858d368da9e05a517c81ce28394f82d6b2fa/programming/rust.png?raw=true" width="96px"/>
 </a>
 </p>
