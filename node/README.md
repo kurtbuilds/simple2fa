@@ -2,7 +2,7 @@
 
 simple2fa is a library to easily add two-factor authentication to your app.
 
-```node
+```javascript
 // Save this update to the database
 user.otp_secret = simple2fa.generate_secret()
 
