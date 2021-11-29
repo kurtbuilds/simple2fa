@@ -13,7 +13,7 @@ user.otp_secret = simple2fa.generate_secret()
 // You can also use `create_png_qrcode` to generate a png file.
 let qrcode = simple2fa.create_urlencoded_qrcode("My web app", "Marie Curie", user.otp_secret)
 
-console.log(`<!-- index.html -->'
+console.log(`<!-- index.html -->
 <img src="${qrcode}" />
 `)
 
@@ -32,6 +32,35 @@ if (simple2fa.check_2fa_code(user.otp_secret, "<otp_code>")) {
     // Log in failed. Ask the user to try entering another otp code or reject their login attempt.
 }
 
+```
+
 # Installation
         
     npm install -S simple2fa
+
+Simple2FA is also available in other languages:
+
+<p align="center">
+<a href="/kurtbuilds/simple2fa/tree/master/node">
+    <img src="https://github.com/kurtbuilds/logos/blob/9e56858d368da9e05a517c81ce28394f82d6b2fa/programming/node.png?raw=true" width="96px"/>
+</a>
+<a href="/kurtbuilds/simple2fa/tree/master/python">
+    <img src="https://github.com/kurtbuilds/logos/blob/9e56858d368da9e05a517c81ce28394f82d6b2fa/programming/python.png?raw=true" width="96px"/>
+</a>
+<a href="kurtbuilds/simple2fa/tree/master">
+    <img src="https://github.com/kurtbuilds/logos/blob/9e56858d368da9e05a517c81ce28394f82d6b2fa/programming/rust.png?raw=true" width="96px"/>
+</a>
+</p>
+
+# Development
+
+Development commands are described in the `Justfile`.
+
+# Appreciation
+
+Thank you to:
+
+- [@fosskers](https://github.com/fosskers) for the Rust [totp-lite](https://github.com/fosskers/totp-lite) library, 
+    which this library depends on. `totp-lite` beat similar Rust libraries in benchmarking.
+- The [neon](https://neon-bindings.com/) project, which makes creating Node libraries painless.
+- The [pyo3](https://pyo3.rs/) project, which makes creating Python libraries painless.
