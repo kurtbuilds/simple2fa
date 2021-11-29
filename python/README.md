@@ -58,11 +58,10 @@ if __name__ == '__main__':
 Simple2FA is also available in other languages:
 
 <p align="center">
-<a href="#"><img src="https://nodejs.org/static/images/logo.svg" width="96px"/></a>
-<a href="#"><img src="https://www.python.org/static/community_logos/python-logo.png" width="96px"/></a>
-<a href="#"><img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="96px"/></a>
+<a href="#"><img src="https://github.com/kurtbuilds/logos/blob/9e56858d368da9e05a517c81ce28394f82d6b2fa/programming/node.png?raw=true" width="96px"/></a>
+<a href="#"><img src="https://github.com/kurtbuilds/logos/blob/9e56858d368da9e05a517c81ce28394f82d6b2fa/programming/python.png?raw=true" width="96px"/></a>
+<a href="#"><img src="https://github.com/kurtbuilds/logos/blob/9e56858d368da9e05a517c81ce28394f82d6b2fa/programming/rust.png?raw=true" width="96px"/></a>
 </p>
-
 
 # Benchmarks
     
