@@ -4,6 +4,7 @@ simple2fa is a library to easily add two-factor authentication to your app.
 
 ```rust
 use simple2fa;
+use simple2fa::create_url_encoded_qrcode;
 
 // This represnts a user in your database.
 struct User {
@@ -17,7 +18,7 @@ fn main() {
     };
 
     // You can also use `create_png_qrcode` to generate a png file.
-    let qrcode_data_url = simple2fa::create_urlencoded_qrcode("My web app", "Marie Curie", user.otp_secret);
+    let qrcode_data_url = create_urlencoded_qrcode("My web app", "Marie Curie", user.otp_secret);
     // The QR code is a data url, so you can render it inline on a web page.
     println!(r#"<!-- index.html -->
     <img src="{}"/>
