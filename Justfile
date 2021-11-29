@@ -48,3 +48,6 @@ publish:
 patch: test
     just version patch
     just publish
+
+flamegraph:
+    CARGO_PROFILE_RELEASE_DEBUG=true cargo flamegraph -b flamegraph_bin --root

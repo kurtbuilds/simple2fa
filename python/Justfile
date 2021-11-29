@@ -4,6 +4,7 @@ help:
     @just --list --unsorted
 
 bootstrap:
+    cargo install just checkexec
     checkexec env env -- python3 -m venv env
     . env/bin/activate && pip3 install maturin ipython
 
@@ -11,29 +12,30 @@ build:
     . env/bin/activate && maturin develop
 alias b := build
 
+release:
+    . env/bin/activate && maturin develop --release
+
 run:
     . env/bin/activate && ipython -i -c "import simple2fa"
 
 alias r := run
 
-release:
-    cargo build --release
-
-install:
-    cargo install --path .
+bench: release
+    #!/bin/bash -ex
+    . env/bin/activate
+    pip3 install -q pyotp
+    python3 bench.py
 
 test:
-    cargo test
+    ! echo Not implemented for the Python library. See the Rust library for tests.
 alias t := test
-
-check:
-    cargo check
 
 # Bump version. level=major,minor,patch
 version level:
     ! echo Not implemented
 
 publish:
+    ! echo Not implemented
     cargo publish
 
 patch: test

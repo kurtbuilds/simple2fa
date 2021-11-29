@@ -19,8 +19,9 @@ fn main() {
         otp_secret: simple2fa::generate_secret()
     };
 
-    // You can also use `create_png_qrcode` to generate a png file.
+    // Use this function or `create_png_qrcode` to generate a png file.
     let qrcode_data_url = create_urlencoded_qrcode("My web app", user.name, user.otp_secret);
+    
     // The QR code is a data url, so you can render it inline on a web page.
     println!(r#"<!-- index.html -->
     <img src="{}"/>
