@@ -67,6 +67,9 @@ pub fn check_2fa_code(secret: &str, code: &str) -> PyResult<bool> {
 #[pymodule]
 fn simple2fa(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(generate_2fa_secret, m)?)?;
+    m.add_function(wrap_pyfunction!(create_urlencoded_qrcode, m)?)?;
+    m.add_function(wrap_pyfunction!(create_png_qrcode, m)?)?;
+    m.add_function(wrap_pyfunction!(check_2fa_code, m)?)?;
     Ok(())
 }
 
