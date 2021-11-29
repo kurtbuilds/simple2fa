@@ -1,5 +1,4 @@
-# simple2fa
-
+# Simple2FA
 
 
 # Installation
