@@ -66,7 +66,7 @@ Simple2FA is also available in other languages:
 <a href="/python">
     <img src="https://github.com/kurtbuilds/logos/blob/9e56858d368da9e05a517c81ce28394f82d6b2fa/programming/python.png?raw=true" width="96px"/>
 </a>
-<a href="/">
+<a href="https://github.com/kurtbuilds/simple2fa/">
     <img src="https://github.com/kurtbuilds/logos/blob/9e56858d368da9e05a517c81ce28394f82d6b2fa/programming/rust.png?raw=true" width="96px"/>
 </a>
 </p>
