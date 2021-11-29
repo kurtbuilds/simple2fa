@@ -1,0 +1,41 @@
+set dotenv-load := true
+
+help:
+    @just --list --unsorted
+
+bootstrap:
+    checkexec env env -- python3 -m venv env
+    . env/bin/activate && pip3 install maturin ipython
+
+build:
+    . env/bin/activate && maturin develop
+alias b := build
+
+run:
+    . env/bin/activate && ipython -i -c "import simple2fa"
+
+alias r := run
+
+release:
+    cargo build --release
+
+install:
+    cargo install --path .
+
+test:
+    cargo test
+alias t := test
+
+check:
+    cargo check
+
+# Bump version. level=major,minor,patch
+version level:
+    ! echo Not implemented
+
+publish:
+    cargo publish
+
+patch: test
+    just version patch
+    just publish

@@ -1,0 +1,19 @@
+[package]
+name = "simple2fa_python"
+version = "0.1.0"
+edition = "2021"
+
+[package.metadata.maturin]
+name = "simple2fa"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "simple2fa"
+crate-type = ["cdylib"]
+
+[dependencies]
+simple2fa = { path = ".." }
+
+[dependencies.pyo3]
+version = "0.15.1"
+features = ["extension-module"]
