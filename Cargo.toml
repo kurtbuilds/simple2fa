@@ -6,6 +6,9 @@ license = "MIT"
 description="Simple2FA is a library to easily add two-factor authentication to your app."
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+bench = false
+
 [dependencies]
 base32 = "0.4.0"
 base64 = "0.13.0"
@@ -18,8 +21,3 @@ totp-lite = "1.0.3"
 
 [dev-dependencies]
 criterion = "0.3"
-
-[[bench]]
-name = "bench"
-harness = false
-path = "src/bin/bench.rs"

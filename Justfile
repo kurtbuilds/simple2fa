@@ -1,25 +1,14 @@
 set dotenv-load := true
 
-bin_name := `rg "name = \"(.*)\"" -or '$1' Cargo.toml | head -n1`
-
 help:
     @just --list --unsorted
 
 build:
-    cargo build
+    cargo build --lib
 alias b := build
 
-run *args:
-    @checkexec target/debug/{{bin_name}} $(fd -e rs) -- cargo build
-    @target/debug/{{bin_name}} {{args}}
-
-alias r := run
-
 release:
-    cargo build --release
-
-install:
-    cargo install --path .
+    cargo build --lib --release
 
 bootstrap:
     cargo install cargo-bump
