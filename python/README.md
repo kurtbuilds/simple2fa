@@ -70,16 +70,14 @@ Simple2FA is also available in other languages:
 </p>
 
 # Benchmarks
-    
-Benchmarks are run with `just bench` (See development section about `just`).
+
+The benchmark runs the essential library functions as a single benchmark. In manual benchmarking,
+individual functions of `simple2fa` outperform their counterparts between 12x and 106x.
 
     The winner is: bench_simple2fa
 
     bench_simple2fa: Took 0.005ms per run.
     bench_pyotp: Took 0.129ms per run. (26.37x slower than the winner)
-
-The benchmark runs the essential library functions as a single benchmark. In manual benchmarking,
-individual functions of `simple2fa` outperform their counterparts between 12x and 106x.
 
 Currently we benchmark against [pyotp](https://github.com/pyauth/pyotp). If there are other libraries
 you'd like to see compared, we welcome pull requests!

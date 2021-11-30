@@ -5,23 +5,25 @@ Simple2FA is a library to easily add two-factor authentication to your app.
 ```javascript
 import * as simple2fa from 'simple2fa';
 
-let user = { otp_secret: null };
-// Save this update to the database
-user.otp_secret = simple2fa.generate_secret()
+// save this user to the database
+let user = { 
+    name: "Marie Curie",
+    otp_secret: simple2fa.generate_2fa_secret(),
+};
 
 // The QR code is a data url, so you can render it inline on your page. 
 // You can also use `create_png_qrcode` to generate a png file.
-let qrcode = simple2fa.create_urlencoded_qrcode("My web app", "Marie Curie", user.otp_secret)
+let qrcode_data_url = simple2fa.create_urlencoded_qrcode("My web app", "Marie Curie", user.otp_secret)
 
 console.log(`<!-- index.html -->
-<img src="${qrcode}" />
+<img src="${qrcode_data_url}" />
 `)
 
 // Ask the user to scan the QR code with their phone, and then submit a code to confirm they have setup 2FA.
 if (simple2fa.check_2fa_code(user.otp_secret, "<otp_code>")) {
     // 2FA is setup, and the code is valid.
 } else {
-    // Something went wrong setting up 2FA. The user might not be using a standards compliant authenticator app.
+    // Something went wrong setting up 2FA. Have the user submit a code again.
 }
 
 // When the user logs in, once you validate their password, respond with the user_id as a hidden 
