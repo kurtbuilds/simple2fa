@@ -50,4 +50,4 @@ patch: test
     just publish
 
 flamegraph:
-    CARGO_PROFILE_RELEASE_DEBUG=true cargo flamegraph -b flamegraph_bin --root
+    CARGO_PROFILE_RELEASE_DEBUG=true cargo flamegraph -b flame --root

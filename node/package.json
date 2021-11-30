@@ -1,18 +1,17 @@
 {
-  "name": "simple2fa_node",
+  "name": "simple2fa",
   "version": "0.1.0",
   "description": "",
   "main": "index.node",
+  "types": "index.d.ts",
   "scripts": {
-    "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
-    "build-debug": "npm run build --",
-    "build-release": "npm run build -- --release",
-    "install": "npm run build-release",
-    "test": "cargo test"
+    "build": "npm_package_name=simple2fa cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cargo-cp-artifact": "^0.1"
+    "benchmark": "^2.1.4",
+    "cargo-cp-artifact": "^0.1",
+    "otplib": "^12.0.1"
   }
 }

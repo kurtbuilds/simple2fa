@@ -71,7 +71,7 @@ Simple2FA is also available in other languages:
 
 # Benchmarks
     
-Benchmarks are most easily run with `just bench` (See development section about `just`).
+Benchmarks are run with `just bench` (See development section about `just`).
 
     The winner is: bench_simple2fa
 

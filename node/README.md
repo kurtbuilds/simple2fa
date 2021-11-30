@@ -52,6 +52,13 @@ Simple2FA is also available in other languages:
 </a>
 </p>
 
+# Benchmarks
+
+    The winner is: bench_simple2fa
+
+    bench_simple2fa: Took 0.004140924565497097µs per run.
+    bench_otplib: Took 0.0613251814689717µs per run.  (14.81x slower than the winner)
+
 # Development
 
 Development commands are described in the `Justfile`.

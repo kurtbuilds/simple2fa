@@ -9,23 +9,26 @@ bootstrap:
     npm install
 
 build:
-    npm run build --
+    npm_package_name=simple2fa_node ./node_modules/.bin/cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics
 alias b := build
 
 run:
-    node -i -e "$(< foo.js)"
+    node -i -e "$(< script/include.js)"
 
 alias r := run
 
 release:
-    cargo build --release
+    npm_package_name=simple2fa_node ./node_modules/.bin/cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics --release
 
-install:
-    cargo install --path .
+alias install := release
 
 test:
     cargo test
 alias t := test
+
+bench: release
+    node script/bench.js
+
 
 check:
     cargo check
