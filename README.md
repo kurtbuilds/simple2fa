@@ -1,5 +1,3 @@
-# Simple2FA
-
 <p align="center">
 <a href="https://github.com/kurtbuilds/simple2fa/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/kurtbuilds/simple2fa.svg?style=flat-square" alt="GitHub Contributors" />
@@ -10,10 +8,16 @@
 <a href="https://github.com/kurtbuilds/simple2fa/actions">
     <img src="https://img.shields.io/github/workflow/status/kurtbuilds/simple2fa/test?style=flat-square" alt="Build Status" />
 </a>
-<a href="https://pypi.org/project/simple2fa/">
-    <img src="https://img.shields.io/pypi/v/simple2fa?style=flat-square" alt="Pypi" />
+<a href="https://crates.io/crates/simple2fa">
+    <img src="https://img.shields.io/crates/d/simple2fa?style=flat-square" alt="Downloads" />
+</a>
+<a href="https://crates.io/crates/simple2fa">
+    <img src="https://img.shields.io/crates/v/simple2fa?style=flat-square" alt="Crates.io" />
 </a>
 </p>
+
+# Simple2FA
+
 
 Simple2FA is a library to easily add two-factor authentication to your app.
 

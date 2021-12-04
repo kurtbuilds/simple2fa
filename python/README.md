@@ -8,11 +8,8 @@
 <a href="https://github.com/kurtbuilds/simple2fa/actions">
     <img src="https://img.shields.io/github/workflow/status/kurtbuilds/simple2fa/test?style=flat-square" alt="Build Status" />
 </a>
-<a href="https://crates.io/crates/simple2fa">
-    <img src="https://img.shields.io/crates/d/simple2fa?style=flat-square" alt="Downloads" />
-</a>
-<a href="https://crates.io/crates/simple2fa">
-    <img src="https://img.shields.io/crates/v/simple2fa?style=flat-square" alt="Crates.io" />
+<a href="https://pypi.org/project/simple2fa/">
+    <img src="https://img.shields.io/pypi/v/simple2fa?style=flat-square" alt="Pypi" />
 </a>
 </p>
 
