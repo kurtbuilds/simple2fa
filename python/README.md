@@ -55,8 +55,9 @@ def main():
         pass  # Something went wrong setting up 2FA. Have the user submit a code again.
 
     
-    # When the user logs in, validate their password, then respond with
-    # the user_id as a hidden input field and request a 2FA code.
+    # When the user logs in, validate their password, then respond with 
+    # a form requesting a 2FA code, putting the user_id in JWT or similar server-signed
+    # wrapper.
     if simple2fa.check_2fa_code(user.otp_secret, "<otp_code>"):
         pass  # Log in successful
     else:
