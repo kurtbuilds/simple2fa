@@ -56,7 +56,8 @@ fn main() {
     }
 
     // When the user logs in, validate their password, then respond with 
-    // the user_id as a hidden input field and request a 2FA code.
+    // a form requesting a 2FA code, putting the user_id in JWT or similar server-signed
+    // wrapper.
     if simple2fa.check_2fa_code(user.otp_secret, "<otp_code>") {
         // Log in successful
     } else {
